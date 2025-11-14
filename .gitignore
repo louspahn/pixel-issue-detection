@@ -1,0 +1,38 @@
+# Logs
+*.log
+pixel_monitor.log
+
+# Environment variables
+.env
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sensitive configuration (if any)
+config.json
+secrets.json
+config_private.sh
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
