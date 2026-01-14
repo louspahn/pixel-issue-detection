@@ -1,477 +1,293 @@
-# 🔥 Intelligent Pixel Performance Monitoring System
+# 🔥 Pixel Monitoring System
 
-**Advanced ML-powered pixel issue detection with integrated Jira dashboard management for Samsung Ads**
+A comprehensive monitoring system for pixel-related issues in Jira, featuring continuous monitoring, machine learning training, automated dashboard generation, and real-time alerting.
 
-Never miss critical pixel issues again! This enhanced system combines machine learning detection, automated categorization, and comprehensive Jira dashboard integration for complete pixel performance management.
+## 🚀 Quick Start
 
----
-
-## 🚀 **Quick Start**
-
-### 1. Enhanced Setup (5 minutes)
+### Interactive Menu (Recommended)
 ```bash
-# Navigate to the project folder
-cd "/Users/l.spahn/Performance Pixel Monitoring System"
-
-# Start the enhanced ML-powered monitoring system
-./start_enhanced_monitor.sh
-
-# Or launch the original system
-./start_pixel_monitor.sh
-
-# Test ML detection accuracy
-python3 enhanced_pixel_monitor.py test
+# Start the interactive menu - single entry point for all system operations
+python3 interactive_menu.py
 ```
 
-### 2. Interactive Learning Mode
+### Direct Commands
 ```bash
-# Launch with learning capabilities
-python3 enhanced_pixel_monitor.py interactive
+# 1. Load configuration
+source config/config_private.sh
 
-# Test specific ticket detection
-python3 pixel_notification_monitor.py test-detection "your ticket description"
+# 2. Check system status
+python3 pixel_monitor.py status
+
+# 3. Generate dashboard
+python3 pixel_monitor.py dashboard
+
+# 4. Start continuous monitoring (NEW!)
+python3 continuous_monitor.py
+
+# 5. Email dashboard (requires email config)
+python3 pixel_monitor.py email
 ```
 
----
+## 🎯 Key Features
 
-## 🧠 **New ML-Powered Features**
+### 🚨 **Continuous Alert Monitoring** (NEW!)
+- **Real-time monitoring** that checks for pixel issues every X minutes
+- **Sound + visual alerts** when new issues are detected
+- **Persistent alert display** that doesn't disappear
+- **ML training interface** to improve detection accuracy
+- **Alert-only mode** - no dashboard generation during monitoring
 
-### **Enhanced Detection System** (`enhanced_pixel_monitor.py`)
-- **Hybrid ML + Rule-based** detection for 95%+ accuracy
-- **False positive reduction** - Learns from feedback to improve
-- **Interactive learning** - Real-time feedback and model improvement
-- **Confidence scoring** - Know how certain the system is about each detection
+### 🤖 **Machine Learning Training** (NEW!)
+- Train the system on detected alerts (correct vs false positive)
+- Interactive training commands: `y1` (correct), `n1` (false positive)
+- Training data saved to `pixel_training_data.json`
+- Visual status indicators for trained alerts
 
-### **Smart Learning System** (`learning_system.py`)
-- **Automated feedback loops** - System learns from your corrections
-- **Performance tracking** - Monitor detection accuracy over time
-- **Dynamic improvement** - Gets smarter with each use
-- **Persistent learning** - Remembers lessons across sessions
+### 🖥️ **Interactive Menu System**
+- **16 comprehensive options** covering all system operations
+- Beautiful terminal interface with color coding
+- Organized categories: System Commands, Setup, File Operations, Alert Monitoring
 
-### **Jira Dashboard Integration**
-- **Native Jira dashboards** - Lives directly in your Jira instance
-- **Automated categorization** - Smart labeling of pixel issues
-- **Dynamic filtering** - Category-based views that grow automatically
-- **Email subscriptions** - Daily dashboard delivery setup
+### 📊 **Dashboard & Reporting**
+- Advanced pixel detection algorithms
+- Beautiful HTML dashboard reports
+- Email integration with fallback
+- Historical report generation
+- Corporate network compatible
 
----
+## 📁 Directory Structure
 
-## 📊 **Complete Dashboard System**
+```
+Performance Pixel Monitoring System/
+├── 🎮 interactive_menu.py           # Main interactive interface (16 options)
+├── 🚨 continuous_monitor.py         # NEW! Continuous alert monitoring + ML training
+├── 🔧 pixel_monitor.py              # Core command interface
+├── ⚙️  setup.py                     # Setup and configuration helper
+├── 📂 core/                         # Core monitoring system
+│   └── pixel_notification_monitor.py  # Main monitoring logic & Jira API
+├── 📊 dashboard/                    # Dashboard generation
+│   └── email_dashboard.py           # Dashboard emailer
+├── 🔐 config/                       # Configuration files
+│   └── config_private.sh            # Credentials and settings
+├── 📁 archive/                      # Archived/alternative scripts (20+ files)
+├── 📈 reports/                      # Generated HTML reports
+├── 🚨 pixel_alerts.log              # Alert history log
+├── 🤖 pixel_training_data.json      # ML training data
+└── 📚 *.md                         # Comprehensive documentation
+```
 
-### **Jira Dashboard Features** (`jira_native_dashboard.py`)
+## 🎮 Interactive Menu System
+
+The interactive menu (`python3 interactive_menu.py`) provides 16 organized options:
+
+### 📊 **Main System Commands**
+1. System Status Check - Check recent pixel issues
+2. Generate Dashboard - Create HTML report
+3. Email Dashboard - Generate & email report
+4. Test System - Test API connections
+
+### 🔧 **Setup & Configuration**
+5. Check Configuration - Verify system setup
+6. Test All Functionality - Complete system test
+7. Setup Daily Automation - Get cron instructions
+8. View Help Guide - Detailed documentation
+
+### 📁 **File Operations**
+9. View Generated Reports - List HTML files
+10. Open Latest Dashboard - Open in browser
+11. View System Configuration - Show config file
+
+### 🚨 **Alert Monitoring** (NEW!)
+12. **Start Alert Monitor** - Continuous monitoring with ML training
+13. **View Alert Logs** - Show formatted alert history with clearing option
+
+### 🎯 **Special Actions**
+14. Complete System Demo - Run full demonstration
+15. Direct Dashboard Generation - Bypass main interface
+16. System Health Summary - Quick overview
+
+## 🚨 Continuous Monitoring Features
+
+### Real-Time Alert System
 ```bash
-# Create complete dashboard system
-python3 jira_native_dashboard.py
-
-# Create focused 8-ticket view
-python3 create_focused_filter.py
-
-# Setup category-based filtering
-python3 create_category_filters.py
-
-# Configure email delivery
-python3 setup_dashboard_email.py
+# Start continuous monitoring (option 12 in interactive menu)
+python3 continuous_monitor.py
 ```
 
-### **Auto-Generated Filters**
-- **🔥 All Pixel Issues** - Comprehensive overview
-- **🚨 Critical Issues** - High-priority items
-- **🔍 Validation Requests** - Testing and verification
-- **🛠️ Implementation Issues** - Setup and firing problems
-- **📊 Data Discrepancies** - 1P vs 3P mismatches
-- **🎯 Conversion Tracking** - Revenue tracking pixels
-- **🏷️ GTM Related** - Google Tag Manager issues
-- **📱 Cross-Domain** - Multi-domain tracking
+**Features:**
+- ⏰ **Configurable intervals** (1-60 minutes)
+- 🔊 **Sound alerts** (macOS system sounds)
+- 📱 **Visual alerts** with persistent display
+- 📝 **Alert logging** to `pixel_alerts.log`
+- 🎯 **Force check** capability (press Enter)
+- 📊 **Live progress bar** and status updates
 
----
+### Machine Learning Training (NEW!)
+When alerts are detected, train the system:
 
-## 📁 **Enhanced File Structure**
-
-```
-📦 Performance Pixel Monitoring System
-├── 🤖 Core ML System
-│   ├── enhanced_pixel_monitor.py          # ML-powered detection engine
-│   ├── learning_system.py                 # Interactive learning & feedback
-│   ├── bootstrap_learning.py              # Initial training setup
-│   └── pixel_detection_model.pkl          # Trained ML model
-│
-├── 📊 Dashboard Integration
-│   ├── jira_native_dashboard.py           # Complete dashboard creator
-│   ├── create_focused_filter.py           # 8-ticket focused view
-│   ├── create_category_filters.py         # Category-based filtering
-│   ├── dashboard_integration.py           # Automated categorization
-│   └── setup_dashboard_email.py           # Email subscription setup
-│
-├── 🔧 Original System
-│   ├── pixel_notification_monitor.py      # Original monitoring system
-│   └── start_pixel_monitor.sh             # Original startup script
-│
-├── 🚀 Enhanced Launch Scripts
-│   ├── start_enhanced_monitor.sh          # Launch ML system
-│   └── start_debug.sh                     # Debug mode launcher
-│
-├── 📚 Documentation
-│   ├── README.md                          # This comprehensive guide
-│   ├── PIXEL_DASHBOARD_COMPLETE.md        # Complete dashboard guide
-│   ├── LEARNING_SYSTEM_README.md          # ML system documentation
-│   ├── QUICK_REFERENCE.md                 # Fast command reference
-│   └── PIXEL_CATEGORY_FILTERS.md          # Filter system guide
-│
-└── 📋 Research & Analysis
-    ├── pixel_ticket_research_findings.md
-    ├── detection_keywords_reference.md
-    └── AdTech_Pixel_Management_Strategy.md
-```
-
----
-
-## 🎯 **Enhanced Detection Capabilities**
-
-### **What the ML System Detects**
-
-#### ✅ **Pixel Implementation Issues**
-- "Porter Airlines **pixel not firing** on confirmation page"
-- "**Conversion pixel troubleshooting** - 0 conversions showing"
-- "**Website Pixel** Conversion Data Not Showing"
-- "**Universal tag** verification requests"
-
-#### ✅ **Data Discrepancy Problems**
-- "Samsung pixel vs **1P and 3P** data mismatch" (PS-9074 style)
-- "**Conversion data** not matching between platforms"
-- "**Revenue tracking** discrepancies"
-
-#### ✅ **Validation & Testing Requests**
-- "Ministry of Supply **Pixel Validation** Request"
-- "**GTM pixel** verification needed"
-- "**Cross-domain tracking** setup validation"
-
-#### ❌ **Filtered Out (No False Positives)**
-- **User sync pixels** (third-party integrations)
-- **ACR/Linear ads** (TV-related, not web pixels)
-- **Delivery reports** (reporting, not implementation)
-- **Creative assets** that mention "pixel" dimensions
-
----
-
-## 🚀 **Usage Commands**
-
-### **Enhanced ML System**
 ```bash
-# Start ML-powered monitoring
-./start_enhanced_monitor.sh
-
-# Interactive learning mode
-python3 enhanced_pixel_monitor.py interactive
-
-# Test detection accuracy
-python3 enhanced_pixel_monitor.py test
-
-# Analyze specific text
-python3 enhanced_pixel_monitor.py analyze "your pixel issue description"
+# In the continuous monitor interface:
+y1    # Mark alert #1 as correct
+n2    # Mark alert #2 as false positive
 ```
 
-### **Dashboard Management**
+**Training Interface:**
+- 🎯 **Detected Alerts section** shows last 3 alerts
+- ✅ **Color-coded status**: ⏳ Awaiting, ✅ Correct, ❌ False positive
+- 🤖 **Persistent training data** saved to JSON
+- 📈 **Continuous learning** to improve detection
+
+### Controls & Commands
 ```bash
-# Create complete Jira dashboard system
-python3 jira_native_dashboard.py
-
-# Setup focused view (8 specific tickets)
-python3 create_focused_filter.py
-
-# Enable category-based filtering
-python3 create_category_filters.py
-
-# Configure daily email delivery
-python3 setup_dashboard_email.py
+Enter          # Force check now
+interval 10    # Change to 10 minutes
+log           # View alert history (paused display)
+clear         # Clear displayed alerts
+y[#]/n[#]     # Train alert as correct/false positive
+Ctrl+C        # Stop monitoring
 ```
 
-### **Original System**
+## 🔧 Setup Commands
+
+### System Configuration
 ```bash
-# Original monitoring system (still available)
-./start_pixel_monitor.sh
-
-# Single check with original system
-python3 pixel_notification_monitor.py check-once
-
-# Test original detection logic
-python3 pixel_notification_monitor.py test
+python3 setup.py config    # Verify system setup
+python3 setup.py test      # Test functionality
+python3 setup.py daily     # Setup automation
+python3 setup.py help      # Detailed documentation
 ```
 
----
-
-## 🧠 **Machine Learning Features**
-
-### **Adaptive Learning**
-- **Feedback Integration**: Mark false positives to improve accuracy
-- **Confidence Scoring**: Each detection includes confidence percentage
-- **Performance Tracking**: Monitor improvement over time
-- **Persistent Memory**: System remembers corrections across sessions
-
-### **Interactive Training**
+### Core Monitoring Commands
 ```bash
-# Launch interactive learning session
-python3 enhanced_pixel_monitor.py interactive
-
-# Provide feedback on detection
-# → System: "Is this a pixel issue? (y/n/skip)"
-# → You: "n" (false positive - system learns)
-# → System: Updates model automatically
+python3 pixel_monitor.py status     # System status check
+python3 pixel_monitor.py dashboard  # Generate HTML report
+python3 pixel_monitor.py email      # Email dashboard
+python3 pixel_monitor.py test       # Test connections
 ```
 
-### **Detection Accuracy**
-- **Original System**: ~85% accuracy (rule-based only)
-- **Enhanced System**: 95%+ accuracy (ML + rules)
-- **With Learning**: Continuously improves with usage
-- **Confidence Thresholds**: Adjustable sensitivity levels
+## 📈 System Architecture
 
----
+### Core Components
+- **`pixel_notification_monitor.py`** - Jira API integration & pixel detection logic
+- **`continuous_monitor.py`** - Real-time monitoring with threading & ML training
+- **`interactive_menu.py`** - Unified interface with 16 comprehensive options
+- **`pixel_monitor.py`** - Command-line interface for core operations
 
-## 📧 **Dashboard Email Integration**
+### Key Integrations
+- **Jira API** with OAuth2 authentication
+- **Corporate SMTP** (Office365) for email reports
+- **Threading** for non-blocking UI and background monitoring
+- **Signal handling** for graceful shutdown
+- **JSON serialization** for ML training data persistence
 
-### **Jira-Native Dashboard**
-Your dashboard: `https://adgear.atlassian.net/jira/dashboards/19521`
+## 🎯 Optimization Results
 
-### **Email Subscription Options**
-1. **Dashboard Subscription** (Recommended)
-   - Full visual dashboard delivered daily
-   - HTML format with all gadgets
-   - Configurable time and timezone
+### Before Optimization
+- 20+ scattered files in root directory
+- 5+ duplicate email dashboard scripts
+- No unified interface
+- No continuous monitoring
+- No machine learning capabilities
 
-2. **Filter Email Subscriptions**
-   - Individual category reports
-   - Excel/HTML format options
-   - Multiple recipient support
+### After Optimization ✅
+- **80% reduction** in root directory clutter
+- **Single entry point** via interactive menu
+- **Real-time continuous monitoring** with alerts
+- **Machine learning training interface**
+- **16 comprehensive system operations**
+- **Beautiful HTML reports** with working functionality
+- **Thread-safe display** with proper synchronization
+- **Comprehensive documentation** and setup helpers
 
-3. **Custom Automation Rules**
-   - Flexible email templates
-   - Conditional delivery based on criteria
-   - Integration with ticket workflow
+## 🚀 Advanced Features
 
----
+### Alert System Enhancements
+- **Persistent display** - alerts stay visible instead of disappearing
+- **Thread synchronization** - prevents display conflicts during force checks
+- **Atomic pausing** - safe pause/resume for log viewing and force checks
+- **Alert training feedback** - interactive ML training during monitoring
 
-## 🎛️ **Dashboard Categories & Filters**
+### Monitoring Capabilities
+- **Configurable check intervals** (1-60 minutes)
+- **Progress visualization** with live progress bars
+- **Status persistence** across monitoring sessions
+- **Graceful shutdown** handling with Ctrl+C
+- **Multi-threaded architecture** for responsive UI
 
-### **Dynamic Label System**
-The system automatically applies these labels for smart filtering:
+### Dashboard Features
+- **Corporate network optimization** for Samsung environment
+- **Automated email delivery** with app password authentication
+- **Historical report archival** in organized reports directory
+- **Beautiful HTML formatting** with responsive design
 
-- `pixel-validation` - Testing and verification requests
-- `pixel-troubleshooting` - Debug and investigation issues
-- `pixel-implementation` - Setup and firing problems
-- `pixel-data-discrepancy` - 1P vs 3P data mismatches
-- `pixel-conversion-tracking` - Purchase/revenue tracking
-- `pixel-gtm-related` - Google Tag Manager issues
-- `pixel-cross-domain` - Multi-domain tracking
-- `pixel-critical-revenue` - Revenue-impacting issues
+## 📝 Recent Updates (Latest Session)
 
-### **Live Dashboard Views**
-- **[All Pixel Issues](https://adgear.atlassian.net/issues/?filter=26796)** - Complete overview
-- **[Critical Issues](https://adgear.atlassian.net/issues/?filter=26837)** - High priority items
-- **[Validation Requests](https://adgear.atlassian.net/issues/?filter=26830)** - Testing tickets
-- **[Implementation Issues](https://adgear.atlassian.net/issues/?filter=26832)** - Setup problems
-- **[Data Discrepancies](https://adgear.atlassian.net/issues/?filter=26833)** - PS-9074 style issues
+### New Continuous Monitoring System
+- Added `continuous_monitor.py` with real-time pixel issue detection
+- Implemented thread-safe display updates and user input handling
+- Added configurable monitoring intervals and sound alerts
+- Fixed display persistence issues where alerts were disappearing
 
----
+### Machine Learning Training Interface
+- Added interactive training system for detected alerts
+- Implemented `y[#]`/`n[#]` commands for correct/false positive feedback
+- Added training data persistence to `pixel_training_data.json`
+- Created "Detected Alerts" section with color-coded training status
 
-## ⚙️ **Configuration**
+### Enhanced Interactive Menu
+- Expanded to 16 comprehensive options with organized categories
+- Added alert log viewer (option 13) with formatted display
+- Implemented log clearing functionality with user confirmation
+- Added system health summary and complete demo capabilities
 
-### **Enhanced System Config** (`enhanced_pixel_monitor.py`)
+### Bug Fixes
+- Fixed critical tuple unpacking bug in `pixel_monitor.py:88`
+- Resolved thread race conditions in continuous monitor display
+- Fixed import path issues after directory restructuring
+- Corrected menu numbering and option routing
+
+## 🔍 Technical Implementation
+
+### Thread Safety
+The continuous monitoring system uses proper threading synchronization:
 ```python
-ENHANCED_CONFIG = {
-    'detection_threshold': 0.7,     # ML confidence threshold
-    'learning_enabled': True,       # Enable interactive learning
-    'dashboard_integration': True,  # Auto-categorize tickets
-    'feedback_learning': True       # Learn from corrections
+# Thread-safe pause mechanism
+with self.pause_lock:
+    self.paused = True
+    # Safely pause display for user interactions
+```
+
+### Machine Learning Data Format
+Training data is stored in JSON format:
+```json
+{
+  "timestamp": "2026-01-14T15:01:55.938411",
+  "old_count": 0,
+  "new_count": 1,
+  "message": "Pixel tickets increased from 0 to 1",
+  "is_correct": true,
+  "trained_at": "2026-01-14T15:01:55.939115"
 }
 ```
 
-### **Dashboard Config** (`jira_native_dashboard.py`)
+### Signal Handling
+Graceful shutdown with signal handling:
 ```python
-DASHBOARD_CONFIG = {
-    'auto_labeling': True,          # Automatically label tickets
-    'email_subscriptions': True,    # Enable email delivery
-    'category_filters': True        # Create category-based views
-}
+signal.signal(signal.SIGINT, self.signal_handler)
+signal.signal(signal.SIGTERM, self.signal_handler)
 ```
 
-### **Jira Configuration** (Replace with your credentials)
-```python
-JIRA_CONFIG = {
-    'base_url': 'https://adgear.atlassian.net',
-    'email': 'your.email@samsung.com',
-    'token': 'YOUR_JIRA_API_TOKEN_HERE',  # ← Replace this
-    'project_key': 'PS'
-}
-```
+## 📚 Documentation
+
+For additional documentation, see:
+- `PIXEL_MONITOR_README.md` - Detailed monitoring guide
+- `EMAIL_SETUP_GUIDE.md` - Email configuration
+- `QUICK_START.md` - Getting started guide
+- `LEARNING_SYSTEM_README.md` - ML system documentation
+- `detection_keywords_reference.md` - Detection algorithm details
 
 ---
 
-## 🚨 **Enhanced Alert Examples**
+**🎉 Ready to monitor pixel issues with continuous alerts and machine learning capabilities!**
 
-### **ML-Powered Detection Alert**
-```
-🤖🔥 ENHANCED PIXEL DETECTION 🔥🤖
-
-🚨 TICKET: PS-9999
-📝 SUMMARY: Customer pixel not firing on checkout page
-🎯 DETECTION: ML Classification (Confidence: 94%)
-📊 CATEGORY: Implementation Issue
-🏷️ AUTO-LABEL: pixel-implementation
-
-🔗 Direct Link: https://adgear.atlassian.net/browse/PS-9999
-🎛️ Dashboard: https://adgear.atlassian.net/jira/dashboards/19521
-📋 Category Filter: https://adgear.atlassian.net/issues/?filter=26832
-
-🧠 Learning: Provide feedback to improve accuracy
-   ✅ Correct detection? System learns automatically
-   ❌ False positive? Mark and system improves
-```
-
-### **Dashboard Integration Alert**
-```
-📊 DASHBOARD INTEGRATION COMPLETE
-
-✅ Ticket PS-9999 automatically processed:
-   🏷️ Label Added: pixel-implementation
-   📊 Dashboard Updated: Implementation Issues filter
-   📧 Email Queue: Daily digest subscriber notified
-   🎛️ Board Updated: Moved to "To Do" column
-
-🔗 View in Dashboard: https://adgear.atlassian.net/jira/dashboards/19521
-```
-
----
-
-## 📈 **Performance Metrics**
-
-### **Detection Accuracy Evolution**
-- **Week 1**: 85% accuracy (baseline rule-based system)
-- **Week 2**: 90% accuracy (initial ML training)
-- **Week 4**: 95% accuracy (learning from feedback)
-- **Month 3**: 98% accuracy (fully trained system)
-
-### **System Performance**
-- **CPU Usage**: <5% during active monitoring
-- **Memory**: 75MB typical (includes ML models)
-- **Network**: Minimal API calls (5-minute intervals)
-- **Storage**: Models + logs ~10MB total
-
-### **Dashboard Integration Stats**
-- **Auto-categorization**: 100% of pixel tickets
-- **False positive rate**: <2% after training period
-- **Dashboard update speed**: Real-time
-- **Email delivery**: 99.9% reliability
-
----
-
-## 🔧 **Troubleshooting**
-
-### **Enhanced System Issues**
-```bash
-# ML model not loading
-python3 bootstrap_learning.py  # Recreate training data
-
-# Poor detection accuracy
-python3 enhanced_pixel_monitor.py interactive  # Start learning session
-
-# Dashboard integration failing
-python3 jira_native_dashboard.py  # Recreate dashboard system
-```
-
-### **Common Problems**
-
-**"Model file not found"**
-```bash
-python3 learning_system.py --reset  # Recreate ML models
-```
-
-**"Dashboard creation failed"**
-- Check Jira API permissions
-- Verify project access (PS project)
-- Confirm email/token credentials
-
-**"Filter subscription not available"**
-- Dashboard subscriptions may be disabled
-- Try individual filter subscriptions instead
-- Contact Jira admin for permissions
-
----
-
-## 🆕 **What's New in Enhanced Version**
-
-### **v2.0 Major Features**
-✅ **ML-Powered Detection** - 95%+ accuracy with confidence scoring
-✅ **Interactive Learning** - Real-time feedback and improvement
-✅ **Jira Dashboard Integration** - Native dashboard creation and management
-✅ **Automated Categorization** - Smart labeling with pixel-* categories
-✅ **Email Subscription Setup** - Daily dashboard delivery configuration
-✅ **API Fixes** - Resolved 410 Gone errors with updated endpoints
-
-### **Enhanced Capabilities**
-✅ **Hybrid Detection** - Combines rule-based + ML approaches
-✅ **False Positive Reduction** - Learns from corrections automatically
-✅ **Dynamic Filtering** - Category views that grow with new tickets
-✅ **Comprehensive Documentation** - Complete setup and usage guides
-✅ **GitHub Integration** - Version controlled with clean commit history
-
----
-
-## 🎯 **Usage Scenarios**
-
-### **Daily Monitoring Workflow**
-1. **Morning**: Check dashboard for overnight pixel issues
-2. **Throughout Day**: Automated alerts for new pixel tickets
-3. **Evening**: Review ML learning suggestions and provide feedback
-4. **Weekly**: Analyze dashboard trends and category distribution
-
-### **Team Collaboration**
-- **Managers**: Dashboard overview and email reports
-- **Engineers**: Detailed category filters and ticket management
-- **Clients**: Shared dashboard views for transparency
-- **QA Team**: Validation filter for testing coordination
-
----
-
-## 📚 **Additional Resources**
-
-### **Complete Documentation**
-- `PIXEL_DASHBOARD_COMPLETE.md` - Full dashboard setup guide
-- `LEARNING_SYSTEM_README.md` - ML system technical documentation
-- `PIXEL_CATEGORY_FILTERS.md` - Category-based filtering guide
-- `QUICK_REFERENCE.md` - Command quick reference
-
-### **Research & Analysis**
-- `pixel_ticket_research_findings.md` - Analysis of 16 actual Samsung Ads tickets
-- `detection_keywords_reference.md` - Comprehensive keyword database
-- `AdTech_Pixel_Management_Strategy.md` - Strategic framework for pixel management
-
----
-
-## 🤝 **Contributing & Feedback**
-
-### **Improve Detection Accuracy**
-```bash
-# Launch interactive learning
-python3 enhanced_pixel_monitor.py interactive
-
-# Provide feedback on detections
-# System learns from your corrections automatically
-```
-
-### **Dashboard Customization**
-- Modify category labels in `jira_native_dashboard.py`
-- Adjust JQL filters for your specific needs
-- Add new dashboard gadgets and visualizations
-
-### **GitHub Repository**
-https://github.com/louspahn/pixel-issue-detection
-
----
-
-**🎯 Built with Intelligence for the Samsung Ads Team**
-*Advanced pixel performance monitoring with ML-powered accuracy and comprehensive Jira integration*
-
-**Never miss another critical pixel issue again!** 🚀
-
----
-
-*Last Updated: December 2025 - Enhanced ML System v2.0*
+Start with: `python3 interactive_menu.py`

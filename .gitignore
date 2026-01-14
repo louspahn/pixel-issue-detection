@@ -36,3 +36,11 @@ config_private.sh
 *.tmp
 *.temp
 .cache/
+
+# Generated HTML reports (exclude from repo)
+email_dashboard_*.html
+reports/*.html
+
+# Alert logs and training data (local only)
+pixel_alerts.log
+pixel_training_data.json

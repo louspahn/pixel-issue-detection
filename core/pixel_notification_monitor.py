@@ -39,7 +39,7 @@ JIRA_CONFIG = {
 NOTIFICATION_CONFIG = {
     'email': {
         'enabled': True,
-        'smtp_server': 'smtp.gmail.com',  # Adjust for your email provider
+        'smtp_server': 'smtp.office365.com',  # Microsoft Outlook/Office 365
         'smtp_port': 587,
         'from_email': 'l.spahn@samsung.com',
         'to_emails': ['l.spahn@samsung.com'],  # Your notification email
