@@ -40,7 +40,16 @@ config_private.sh
 # Generated HTML reports (exclude from repo)
 email_dashboard_*.html
 reports/*.html
+*.html
 
 # Alert logs and training data (local only)
+*.log
 pixel_alerts.log
 pixel_training_data.json
+
+# Machine Learning data files (local only)
+*.db
+*.pkl
+learning_data.db
+pixel_detection_model.pkl
+text_vectorizer.pkl
